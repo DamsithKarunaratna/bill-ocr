@@ -39,7 +39,11 @@ class App extends Component {
         <hr/>
         <input type="file" id="input" accept="image/*" capture="camera" onChange={this.handleImage}/>
         <hr/>
+<<<<<<< Updated upstream
         <img alt="image" id="img" width="500"/>
+=======
+        <img alt="image" id="img" width="95%"/>
+>>>>>>> Stashed changes
       </div>
     );
   }
