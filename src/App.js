@@ -39,7 +39,7 @@ class App extends Component {
         <hr/>
         <input type="file" id="input" accept="image/*" capture="camera" onChange={this.handleImage}/>
         <hr/>
-        <img alt="image" id="img" width="100%"/>
+        <img alt="image" id="img" width="500"/>
       </div>
     );
   }
