@@ -3,6 +3,29 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      imgPath: "EVVETT"
+    }
+  
+  }
+
+  handleImage = (evt) => {
+    var reader  = new FileReader();
+
+    reader.addEventListener("load", function () {
+       console.log(reader.result);
+       document.getElementById('img').src = reader.result;
+    }, false);
+
+    var selectedFile = document.getElementById('input').files[0];
+    if (selectedFile) {
+      reader.readAsDataURL(selectedFile);
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -14,7 +37,9 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <hr/>
-        <input type="file" accept="image/*" capture="camera" />
+        <input type="file" id="input" accept="image/*" capture="camera" onChange={this.handleImage}/>
+        <hr/>
+        <img alt="image" id="img"/>
       </div>
     );
   }
